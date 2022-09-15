@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.7 on win32)" generated="20220915 17:24:07.300" rpa="false" schemaversion="3">
+<suite id="s1" name="Teste Prax" source="C:\Users\Prax\Desktop\Teste_Prax">
+<suite id="s1-s1" name="Tests" source="C:\Users\Prax\Desktop\Teste_Prax\tests">
+<suite id="s1-s1-s1" name="Login invalido" source="C:\Users\Prax\Desktop\Teste_Prax\tests\Login_invalido.robot">
+<kw name="Abrir Sessao" library="Resource" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${ROBOT_BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220915 17:24:07.643" level="INFO">Opening browser 'chrome' to base url 'https://accounts.google.com/'.</msg>
+<status status="PASS" starttime="20220915 17:24:07.642" endtime="20220915 17:24:10.503"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220915 17:24:10.504" endtime="20220915 17:24:10.631"/>
+</kw>
+<status status="PASS" starttime="20220915 17:24:07.641" endtime="20220915 17:24:10.632"/>
+</kw>
+<test id="s1-s1-s1-t1" name="Caso de Teste 01: Login invalido" line="9">
+<kw name="Dado que eu efetue o login invalido" library="Logar_google_invalido">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LOGIN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220915 17:24:10.635" endtime="20220915 17:24:10.661"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOGIN}</arg>
+<arg>praxtestesqa@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220915 17:24:10.663" level="INFO">Typing text 'praxtestesqa@gmail.com' into text field 'name=identifier'.</msg>
+<status status="PASS" starttime="20220915 17:24:10.662" endtime="20220915 17:24:10.783"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="identifierNext"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220915 17:24:10.785" level="INFO">Clicking element 'xpath=//*[@id="identifierNext"]'.</msg>
+<status status="PASS" starttime="20220915 17:24:10.784" endtime="20220915 17:24:10.976"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${PASSWORD}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220915 17:24:10.977" endtime="20220915 17:24:14.717"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PASSWORD}</arg>
+<arg>teste123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220915 17:24:14.718" level="INFO">Typing text 'teste123' into text field 'name=Passwd'.</msg>
+<status status="PASS" starttime="20220915 17:24:14.717" endtime="20220915 17:24:14.801"/>
+</kw>
+<status status="PASS" starttime="20220915 17:24:10.634" endtime="20220915 17:24:14.802"/>
+</kw>
+<kw name="Quando eu tentar logar" library="Logar_google_invalido">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[@id="passwordNext"]//button</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220915 17:24:14.803" endtime="20220915 17:24:14.892"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="passwordNext"]//button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220915 17:24:14.893" level="INFO">Clicking element 'xpath=//*[@id="passwordNext"]//button'.</msg>
+<status status="PASS" starttime="20220915 17:24:14.893" endtime="20220915 17:24:14.959"/>
+</kw>
+<status status="PASS" starttime="20220915 17:24:14.802" endtime="20220915 17:24:14.959"/>
+</kw>
+<kw name="Então deve ser exibido uma mensagem de erro" library="Logar_google_invalido">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[contains(text(), 'Senha incorreta')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220915 17:24:14.960" endtime="20220915 17:24:15.618"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220915 17:24:15.755" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220915 17:24:15.619" endtime="20220915 17:24:15.757"/>
+</kw>
+<status status="PASS" starttime="20220915 17:24:14.960" endtime="20220915 17:24:15.757"/>
+</kw>
+<status status="PASS" starttime="20220915 17:24:10.632" endtime="20220915 17:24:15.758"/>
+</test>
+<status status="PASS" starttime="20220915 17:24:07.365" endtime="20220915 17:24:15.760"/>
+</suite>
+<status status="PASS" starttime="20220915 17:24:07.358" endtime="20220915 17:24:15.763"/>
+</suite>
+<status status="PASS" starttime="20220915 17:24:07.305" endtime="20220915 17:24:15.766"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Teste Prax">Teste Prax</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Tests">Teste Prax.Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Login invalido">Teste Prax.Tests.Login invalido</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
